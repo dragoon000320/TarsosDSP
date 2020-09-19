@@ -45,7 +45,8 @@ doc/
 build/*.jar
 prepender.rb
 *_prefix.txt
-build/TarsosDSP-*
+build/tarsosdsp-*
+!build/tarsosdsp-1.0.pom
 decoder_log*
 
 ###########

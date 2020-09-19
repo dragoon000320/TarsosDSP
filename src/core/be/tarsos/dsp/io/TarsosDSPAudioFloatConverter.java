@@ -397,7 +397,7 @@ public abstract class TarsosDSPAudioFloatConverter {
             int len = out_offset + out_len;
             for (int ox = out_offset; ox < len; ox++) {
                 out_buff[ox] = ((short) ((in_buff[ix++] & 0xFF) | 
-                           (in_buff[ix++] << 8))) * (1.0f / 32767.0f);
+                           (in_buff[ix++] << 8))) * (1.0f / 32768.0f);
             }
 
             return out_buff;
@@ -408,7 +408,7 @@ public abstract class TarsosDSPAudioFloatConverter {
             int ox = out_offset;
             int len = in_offset + in_len;
             for (int ix = in_offset; ix < len; ix++) {
-                int x = (int) (in_buff[ix] * 32767.0);
+                int x = (int) (in_buff[ix] * 32768.0);
                 out_buff[ox++] = (byte) x;
                 out_buff[ox++] = (byte) (x >>> 8);
             }
